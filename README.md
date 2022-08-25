@@ -1,8 +1,8 @@
-# elvish-util-wrappers
+# elvish-git
 
-###### [Elvish](https://elv.sh) modules that wrap various command line utilities.
+###### [Elvish](https://elv.sh) modules that abstract [Git](https://git-scm.com) functionality.
 
 ```elvish
-epm:install github.com/chlorm/elvish-util-wrappers
-use github.com/chlorm/elvish-util-wrappers/<util>
+epm:install github.com/chlorm/elvish-git
+use github.com/chlorm/elvish-git/<module>
 ```
