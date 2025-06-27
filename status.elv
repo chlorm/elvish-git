@@ -261,3 +261,28 @@ fn status {
     put $gitStatus
 }
 
+fn -count-generic {|status key|
+    var count = 0
+    for i [ (map:keys $status['paths']) ] {
+        try {
+            if $status['paths'][$i][$key] {
+                set count = (+ $count 1)
+            }
+        } catch _ { }
+    }
+
+    put $count
+}
+
+fn count-unstaged {|status|
+    -count-generic $status 'unstaged'
+}
+
+fn count-untracked {|status|
+    -count-generic $status 'untracked'
+}
+
+fn count-deleted {|status|
+    -count-generic $status 'undeleted'
+}
+
